@@ -1350,3 +1350,23 @@ const int * const p = &a;
 ```
 
 由此可见备份了一份数据d后，丢失了其他任何一个数据，都可以通过备份数据与其它数据异或恢复回来，磁盘阵列技术raid5的数据备份原理，用的就是这个特性。
+
+## 7
+### 7.18
+
+stm32 arduino框架使用串口1打印
+
+```cpp
+/* 使用底下这种方式初始化并使用串口1，否则默认直接使用Serial打印是串口2 */
+HardwareSerial Serial1(PA10, PA9);
+
+void setup() {
+  Serial.begin(115200); /* 串口2 */
+  Serial.println(F("SSD1306 luxury test Serial2")); /* 串口2 */
+
+  Serial1.begin(115200); /* 串口1 */
+  Serial1.println(F("SSD1306 luxury test")); /* 串口1 */
+
+}
+```
+
