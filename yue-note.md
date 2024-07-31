@@ -1370,3 +1370,24 @@ void setup() {
 }
 ```
 
+## 8
+
+### 8.1
+
+##### STM32CubeIDE使用注意事项
+
+1. MX生成直接在Generate Under Root即可
+2. 在目录中存放UserApp文件夹，包含Inc和Src分别存放头文件和源文件
+3. 需要Project->Refresh后，Properties->C/C++General->Paths and Symbols->Includes添加UserApp/Inc
+4. Properties->C/C++General->Paths and Symbols->Source Location添加/{ProjectName}/UserApp/Src
+
+注意：移动工程后会提示路径更改，**不要**选择删除原路径的工程，因为那很可能就是你的代码
+
+Eclipse的**工作区**概念：一个工作区(Workspace)下所有Project共享一套设置
+（例如**bin文件位置**、**调试的设置**、**log存放位置**、**快捷键**等）
+
+总结来说更改工程位置有三个注意的点：
+
+1. 若更改了Workspace位置，会找不到Project，是因为路径改变导致的，可以在File->Import->Existing Projects into Workspace将Project添加到Workspace中，这时会提示你同名Project，选择"Replace with newer Project"，但是最好**不要**选择从磁盘上永久删除复选框，手动删除，否则容易误删代码。
+2. 更改Workspace/Project/Paths后，一定要注意下载的elf文件是不是当前编译的........曾经对着半小时之前编译的elf文件不停调试，直到发现一个变量删除后依然可以打印才意识到.....
+3. 还有一个要注意的点是，{workspace_path}/.metadata/.log4j2.xml中如果有前工程位置的路径存档，每次打开会在那个位置新建.metadata文件夹，需要手动更改为新工程的路径
