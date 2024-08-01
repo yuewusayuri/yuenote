@@ -1391,3 +1391,17 @@ Eclipse的**工作区**概念：一个工作区(Workspace)下所有Project共享
 1. 若更改了Workspace位置，会找不到Project，是因为路径改变导致的，可以在File->Import->Existing Projects into Workspace将Project添加到Workspace中，这时会提示你同名Project，选择"Replace with newer Project"，但是最好**不要**选择从磁盘上永久删除复选框，手动删除，否则容易误删代码。
 2. 更改Workspace/Project/Paths后，一定要注意下载的elf文件是不是当前编译的........曾经对着半小时之前编译的elf文件不停调试，直到发现一个变量删除后依然可以打印才意识到.....
 3. 还有一个要注意的点是，{workspace_path}/.metadata/.log4j2.xml中如果有前工程位置的路径存档，每次打开会在那个位置新建.metadata文件夹，需要手动更改为新工程的路径
+
+### 8.2
+
+##### STM32CubeIDE推荐使用方法
+
+Workspace选在默认的目录下，File->Import->Existing Projects into Workspace将Project添加到Workspace中，如果不需要使用就右键delete但不要从disk上删除，即可实现所有project公用一套设置操作
+
+### 8.3
+
+##### SystemView初体验
+
+使用官网提供的工程，爽啊，很爽啊~
+
+TODO:移植Segger RTT到自己的工程内
