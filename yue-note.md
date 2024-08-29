@@ -1405,3 +1405,47 @@ Workspace选在默认的目录下，File->Import->Existing Projects into Workspa
 使用官网提供的工程，爽啊，很爽啊~
 
 TODO:移植Segger RTT到自己的工程内
+
+### 8.29
+
+```sh
+" Enable syntax highlighting
+syntax on
+
+" Enable line numbers
+set number
+
+" Show matching brackets
+set showmatch
+
+" Set auto-indentation
+set autoindent
+set smartindent
+
+" Enable relative line numbers
+set relativenumber
+
+" Set tab width and expand tabs to spaces
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Set mouse support (useful for GUI versions)
+set mouse=a
+
+" Highlight search results
+set hlsearch
+set incsearch
+
+" Case insensitive searching, unless using capital letters
+set ignorecase
+set smartcase
+
+" Set status line to always show
+set laststatus=2
+
+" Enable clipboard support (use system clipboard)
+set clipboard=unnamedplus
+
+```
+
